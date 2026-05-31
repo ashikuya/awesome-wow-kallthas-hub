@@ -70,6 +70,7 @@ export function Navbar() {
           ) : (
             <Link
               to="/login"
+              search={{ redirect: "/account", mode: "login" }}
               className="flex items-center gap-2 rounded-md border border-frost/40 bg-card/60 px-3 py-2 sm:px-4 text-sm uppercase tracking-wider text-frost backdrop-blur transition hover:bg-frost/10"
             >
               <LogIn className="h-4 w-4" />
