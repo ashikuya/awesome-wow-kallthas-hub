@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Realm } from "@/components/Realm";
 import { Progression } from "@/components/Progression";
+import { News } from "@/components/News";
 import { JoinCTA } from "@/components/JoinCTA";
 import { Footer } from "@/components/Footer";
 
@@ -33,6 +34,7 @@ function Index() {
       <main className="relative z-10">
         <Hero />
         <Features />
+        <News />
         <Realm />
         <Progression />
         <JoinCTA />
