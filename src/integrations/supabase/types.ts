@@ -14,7 +14,126 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      news: {
+        Row: {
+          body: string | null
+          category: string
+          created_at: string
+          excerpt: string
+          id: string
+          published: boolean
+          title: string
+        }
+        Insert: {
+          body?: string | null
+          category?: string
+          created_at?: string
+          excerpt: string
+          id?: string
+          published?: boolean
+          title: string
+        }
+        Update: {
+          body?: string | null
+          category?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          published?: boolean
+          title?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          donor_coins: number
+          faction: string | null
+          game_account: string
+          id: string
+          updated_at: string
+          vote_points: number
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          donor_coins?: number
+          faction?: string | null
+          game_account: string
+          id: string
+          updated_at?: string
+          vote_points?: number
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          donor_coins?: number
+          faction?: string | null
+          game_account?: string
+          id?: string
+          updated_at?: string
+          vote_points?: number
+        }
+        Relationships: []
+      }
+      realm_status: {
+        Row: {
+          alliance_count: number
+          horde_count: number
+          id: number
+          online: boolean
+          players_online: number
+          updated_at: string
+          uptime_seconds: number
+        }
+        Insert: {
+          alliance_count?: number
+          horde_count?: number
+          id?: number
+          online?: boolean
+          players_online?: number
+          updated_at?: string
+          uptime_seconds?: number
+        }
+        Update: {
+          alliance_count?: number
+          horde_count?: number
+          id?: number
+          online?: boolean
+          players_online?: number
+          updated_at?: string
+          uptime_seconds?: number
+        }
+        Relationships: []
+      }
+      vote_logs: {
+        Row: {
+          id: string
+          points_awarded: number
+          site: string
+          user_id: string
+          voted_at: string
+        }
+        Insert: {
+          id?: string
+          points_awarded?: number
+          site: string
+          user_id: string
+          voted_at?: string
+        }
+        Update: {
+          id?: string
+          points_awarded?: number
+          site?: string
+          user_id?: string
+          voted_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
