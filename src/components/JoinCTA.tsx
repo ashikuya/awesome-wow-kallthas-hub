@@ -1,4 +1,5 @@
 import { Download, MessageSquare, ChevronRight } from "lucide-react";
+import { ConnectDialog } from "./ConnectDialog";
 
 const steps = [
   { n: "01", title: "Account erstellen", text: "Registriere dich in 30 Sekunden — kostenlos und ohne E-Mail-Bestätigung." },
@@ -25,15 +26,21 @@ export function JoinCTA() {
                 Tausende Spieler haben den Weg nach Azeroth bereits gefunden. Heute ist dein Tag, dich der Schlacht gegen den Lich King anzuschließen.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
+                <ConnectDialog
+                  trigger={
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-2 rounded-md border border-frost/60 bg-frost/15 px-6 py-3 font-display text-sm uppercase tracking-widest text-frost backdrop-blur transition hover:bg-frost/25"
+                    >
+                      <Download className="h-4 w-4" />
+                      Jetzt verbinden
+                    </button>
+                  }
+                />
                 <a
-                  href="#download"
-                  className="inline-flex items-center gap-2 rounded-md border border-frost/60 bg-frost/15 px-6 py-3 font-display text-sm uppercase tracking-widest text-frost backdrop-blur transition hover:bg-frost/25"
-                >
-                  <Download className="h-4 w-4" />
-                  Client Download
-                </a>
-                <a
-                  href="#discord"
+                  href="https://discord.gg/kaelthas"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md border border-border bg-card/50 px-6 py-3 font-display text-sm uppercase tracking-widest text-foreground transition hover:border-frost/50 hover:text-frost"
                 >
                   <MessageSquare className="h-4 w-4" />

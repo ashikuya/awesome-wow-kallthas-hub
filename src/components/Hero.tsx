@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-lichking.jpg";
 import { RuneCircle } from "./RuneCircle";
+import { ConnectDialog } from "./ConnectDialog";
 import { ChevronRight, Users, Server, Zap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
@@ -79,12 +80,17 @@ export function Hero() {
               <ChevronRight className="relative z-10 h-4 w-4 transition group-hover:translate-x-1" />
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-frost/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </Link>
-            <a
-              href="#realm"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-6 sm:px-8 py-4 text-sm font-display uppercase tracking-[0.25em] text-foreground backdrop-blur transition hover:border-frost/60 hover:text-frost"
-            >
-              Verbinden
-            </a>
+            <ConnectDialog
+              trigger={
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-6 sm:px-8 py-4 text-sm font-display uppercase tracking-[0.25em] text-foreground backdrop-blur transition hover:border-frost/60 hover:text-frost"
+                >
+                  <Server className="h-4 w-4" />
+                  Verbinden
+                </button>
+              }
+            />
           </div>
 
           <div className="mt-14 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-lg border border-frost/20 bg-frost/20 backdrop-blur">
