@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-lichking.jpg";
 import { RuneCircle } from "./RuneCircle";
+import { ConnectDialog } from "./ConnectDialog";
 import { ChevronRight, Users, Server, Zap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
