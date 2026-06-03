@@ -18,8 +18,8 @@ interface NewsItem {
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News & Patchnotes · Kael'thas Realm" },
-      { name: "description", content: "Aktuelle Ankündigungen, Patchnotes und Events vom Kael'thas WotLK 3.3.5a Realm." },
+      { title: "News & Patchnotes · Kaelthas Realm" },
+      { name: "description", content: "Aktuelle Ankündigungen, Patchnotes und Events vom Kaelthas WotLK 3.3.5a Realm." },
     ],
   }),
   component: NewsPage,

@@ -22,7 +22,7 @@ export function Realm() {
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-md border border-frost/40 bg-background/70 px-4 py-3 backdrop-blur">
               <div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Realm</div>
-                <div className="font-display text-foreground">Kael'thas · PvE/PvP</div>
+                <div className="font-display text-foreground">Kaelthas · PvE/PvP</div>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-frost animate-pulse" />
@@ -37,7 +37,7 @@ export function Realm() {
               Ein Königreich aus Eis & Stahl
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Kael'thas läuft auf AzerothCore mit handgepflegten Patches. Wir kombinieren blizzlike Authentizität mit Quality-of-Life Features die das moderne Spielen angenehmer machen — ohne den Geist von Wrath zu verraten.
+              Kaelthas läuft auf AzerothCore mit handgepflegten Patches. Wir kombinieren blizzlike Authentizität mit Quality-of-Life Features die das moderne Spielen angenehmer machen — ohne den Geist von Wrath zu verraten.
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-frost/20 bg-frost/20">

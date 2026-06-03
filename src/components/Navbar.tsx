@@ -28,7 +28,7 @@ export function Navbar() {
             <span className="font-display text-frost text-lg">K</span>
           </div>
           <div className="hidden sm:block leading-tight">
-            <div className="font-display text-xl tracking-widest text-gradient-frost">KAEL'THAS</div>
+            <div className="font-display text-xl tracking-widest text-gradient-frost">KAELTHAS</div>
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">WotLK · 3.3.5a</div>
           </div>
         </Link>
