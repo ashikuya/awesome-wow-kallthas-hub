@@ -12,13 +12,13 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kael'thas · WoW WotLK 3.3.5a AzerothCore Realm" },
+      { title: "Kaelthas · WoW WotLK 3.3.5a AzerothCore Realm" },
       {
         name: "description",
         content:
-          "Kael'thas — blizzlike Wrath of the Lich King 3.3.5a Server auf AzerothCore. Icecrown Citadel, faire Rates, aktive Community. Jetzt beitreten.",
+          "Kaelthas — blizzlike Wrath of the Lich King 3.3.5a Server auf AzerothCore. Icecrown Citadel, faire Rates, aktive Community. Jetzt beitreten.",
       },
-      { property: "og:title", content: "Kael'thas · WoW WotLK 3.3.5a Realm" },
+      { property: "og:title", content: "Kaelthas · WoW WotLK 3.3.5a Realm" },
       { property: "og:description", content: "Blizzlike Wrath of the Lich King Server. AzerothCore. Tritt dem Kampf gegen den Lich King bei." },
       { property: "og:type", content: "website" },
     ],

@@ -38,7 +38,7 @@ export function Features() {
     <section className="relative py-32" id="features">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs uppercase tracking-[0.4em] text-frost">Warum Kael'thas</p>
+          <p className="mb-3 text-xs uppercase tracking-[0.4em] text-frost">Warum Kaelthas</p>
           <h2 className="font-display text-4xl sm:text-5xl text-gradient-frost">Das Königreich erwartet dich</h2>
           <div className="runic-divider mx-auto mt-6 w-48" />
         </div>

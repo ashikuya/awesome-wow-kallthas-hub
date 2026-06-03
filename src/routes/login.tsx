@@ -92,7 +92,7 @@ function LoginPage() {
               <span className="font-display text-2xl text-frost">K</span>
             </div>
             <div>
-              <div className="font-display text-2xl tracking-[0.3em] text-gradient-frost">KAEL'THAS</div>
+              <div className="font-display text-2xl tracking-[0.3em] text-gradient-frost">KAELTHAS</div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Wrath of the Lich King</div>
             </div>
           </Link>
@@ -128,7 +128,7 @@ function LoginPage() {
               <p className="mb-6 text-sm text-muted-foreground">
                 {mode === "login"
                   ? "Setze deine Reise durch Azeroth fort."
-                  : "Erstelle deinen Account für den Kael'thas Realm."}
+                  : "Erstelle deinen Account für den Kaelthas Realm."}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">

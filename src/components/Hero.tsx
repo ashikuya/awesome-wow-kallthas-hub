@@ -58,7 +58,7 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-7xl lg:text-8xl">
-            <span className="text-gradient-frost block">KAEL'THAS</span>
+            <span className="text-gradient-frost block">KAELTHAS</span>
             <span className="mt-2 block text-2xl font-normal tracking-[0.3em] text-muted-foreground sm:text-4xl sm:tracking-[0.4em]">
               FROZEN LEGACY
             </span>
