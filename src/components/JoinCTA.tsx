@@ -1,4 +1,5 @@
 import { Download, MessageSquare, ChevronRight } from "lucide-react";
+import { ConnectDialog } from "./ConnectDialog";
 
 const steps = [
   { n: "01", title: "Account erstellen", text: "Registriere dich in 30 Sekunden — kostenlos und ohne E-Mail-Bestätigung." },
