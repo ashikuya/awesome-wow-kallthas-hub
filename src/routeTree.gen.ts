@@ -13,8 +13,11 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as AuthenticatedAccountIndexRouteImport } from './routes/_authenticated/account/index'
+import { Route as ForumThreadThreadIdRouteImport } from './routes/forum.thread.$threadId'
+import { Route as ForumBoardBoardIdRouteImport } from './routes/forum.board.$boardId'
 import { Route as AuthenticatedAccountVoteRouteImport } from './routes/_authenticated/account/vote'
 import { Route as AuthenticatedAccountSecurityRouteImport } from './routes/_authenticated/account/security'
 
@@ -37,6 +40,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForumIndexRoute = ForumIndexRouteImport.update({
+  id: '/forum/',
+  path: '/forum/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
   id: '/account',
   path: '/account',
@@ -48,6 +56,16 @@ const AuthenticatedAccountIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedAccountRoute,
   } as any)
+const ForumThreadThreadIdRoute = ForumThreadThreadIdRouteImport.update({
+  id: '/forum/thread/$threadId',
+  path: '/forum/thread/$threadId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForumBoardBoardIdRoute = ForumBoardBoardIdRouteImport.update({
+  id: '/forum/board/$boardId',
+  path: '/forum/board/$boardId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAccountVoteRoute =
   AuthenticatedAccountVoteRouteImport.update({
     id: '/vote',
@@ -66,16 +84,22 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/news': typeof NewsRoute
   '/account': typeof AuthenticatedAccountRouteWithChildren
+  '/forum/': typeof ForumIndexRoute
   '/account/security': typeof AuthenticatedAccountSecurityRoute
   '/account/vote': typeof AuthenticatedAccountVoteRoute
+  '/forum/board/$boardId': typeof ForumBoardBoardIdRoute
+  '/forum/thread/$threadId': typeof ForumThreadThreadIdRoute
   '/account/': typeof AuthenticatedAccountIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/news': typeof NewsRoute
+  '/forum': typeof ForumIndexRoute
   '/account/security': typeof AuthenticatedAccountSecurityRoute
   '/account/vote': typeof AuthenticatedAccountVoteRoute
+  '/forum/board/$boardId': typeof ForumBoardBoardIdRoute
+  '/forum/thread/$threadId': typeof ForumThreadThreadIdRoute
   '/account': typeof AuthenticatedAccountIndexRoute
 }
 export interface FileRoutesById {
@@ -85,8 +109,11 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/news': typeof NewsRoute
   '/_authenticated/account': typeof AuthenticatedAccountRouteWithChildren
+  '/forum/': typeof ForumIndexRoute
   '/_authenticated/account/security': typeof AuthenticatedAccountSecurityRoute
   '/_authenticated/account/vote': typeof AuthenticatedAccountVoteRoute
+  '/forum/board/$boardId': typeof ForumBoardBoardIdRoute
+  '/forum/thread/$threadId': typeof ForumThreadThreadIdRoute
   '/_authenticated/account/': typeof AuthenticatedAccountIndexRoute
 }
 export interface FileRouteTypes {
@@ -96,16 +123,22 @@ export interface FileRouteTypes {
     | '/login'
     | '/news'
     | '/account'
+    | '/forum/'
     | '/account/security'
     | '/account/vote'
+    | '/forum/board/$boardId'
+    | '/forum/thread/$threadId'
     | '/account/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/login'
     | '/news'
+    | '/forum'
     | '/account/security'
     | '/account/vote'
+    | '/forum/board/$boardId'
+    | '/forum/thread/$threadId'
     | '/account'
   id:
     | '__root__'
@@ -114,8 +147,11 @@ export interface FileRouteTypes {
     | '/login'
     | '/news'
     | '/_authenticated/account'
+    | '/forum/'
     | '/_authenticated/account/security'
     | '/_authenticated/account/vote'
+    | '/forum/board/$boardId'
+    | '/forum/thread/$threadId'
     | '/_authenticated/account/'
   fileRoutesById: FileRoutesById
 }
@@ -124,6 +160,9 @@ export interface RootRouteChildren {
   AuthenticatedRoute: typeof AuthenticatedRouteWithChildren
   LoginRoute: typeof LoginRoute
   NewsRoute: typeof NewsRoute
+  ForumIndexRoute: typeof ForumIndexRoute
+  ForumBoardBoardIdRoute: typeof ForumBoardBoardIdRoute
+  ForumThreadThreadIdRoute: typeof ForumThreadThreadIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -156,6 +195,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forum/': {
+      id: '/forum/'
+      path: '/forum'
+      fullPath: '/forum/'
+      preLoaderRoute: typeof ForumIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/account': {
       id: '/_authenticated/account'
       path: '/account'
@@ -169,6 +215,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/account/'
       preLoaderRoute: typeof AuthenticatedAccountIndexRouteImport
       parentRoute: typeof AuthenticatedAccountRoute
+    }
+    '/forum/thread/$threadId': {
+      id: '/forum/thread/$threadId'
+      path: '/forum/thread/$threadId'
+      fullPath: '/forum/thread/$threadId'
+      preLoaderRoute: typeof ForumThreadThreadIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forum/board/$boardId': {
+      id: '/forum/board/$boardId'
+      path: '/forum/board/$boardId'
+      fullPath: '/forum/board/$boardId'
+      preLoaderRoute: typeof ForumBoardBoardIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/account/vote': {
       id: '/_authenticated/account/vote'
@@ -219,6 +279,9 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
   LoginRoute: LoginRoute,
   NewsRoute: NewsRoute,
+  ForumIndexRoute: ForumIndexRoute,
+  ForumBoardBoardIdRoute: ForumBoardBoardIdRoute,
+  ForumThreadThreadIdRoute: ForumThreadThreadIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -100,7 +100,9 @@ function AccountOverview() {
             </p>
           </div>
           <a
-            href="#download"
+            href="https://www.mediafire.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md border border-frost/60 bg-frost/15 px-6 py-3 font-display text-sm uppercase tracking-widest text-frost transition hover:bg-frost/25"
           >
             <Download className="h-4 w-4" /> Download
