@@ -1,11 +1,12 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Shield, Home, CheckSquare, Newspaper, LogIn, User, Menu, X, LogOut } from "lucide-react";
+import { Shield, Home, CheckSquare, Newspaper, LogIn, User, Menu, X, LogOut, MessagesSquare } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 
 const items = [
   { label: "Home", icon: Home, href: "/" },
   { label: "News", icon: Newspaper, href: "/news" },
+  { label: "Forum", icon: MessagesSquare, href: "/forum" },
   { label: "Vote", icon: CheckSquare, href: "/account/vote", auth: true },
   { label: "Armory", icon: Shield, href: "/account" },
 ];
