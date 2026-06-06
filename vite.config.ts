@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Self-hosting on Debian: build a plain Node server instead of a Cloudflare Worker.
+  // On Lovable (preview/published) this is ignored — the Lovable build pipeline targets Cloudflare.
+  nitro: {
+    preset: process.env.NITRO_PRESET || undefined,
+  },
 });
